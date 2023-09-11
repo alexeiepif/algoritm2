@@ -23,13 +23,15 @@ d = []
 print("Fibonacci:")
 for i in range(1, N):
     b.append(i)
-    time = sum(timeit.timeit(lambda: fibonacci(i), number=1) for j in range(10000))
+    time = sum(timeit.timeit(lambda: fibonacci(i), number=1)
+               for j in range(10000))
     k = time/10000
     c.append(k)
     print("При i = ", i, "время = ", k)
 print("Fibonaccibest:")
 for i in range(1, N):
-    time = sum(timeit.timeit(lambda: fibonaccibest(i), number=1) for j in range(10000))
+    time = sum(timeit.timeit(lambda: fibonaccibest(i), number=1)
+               for j in range(10000))
     l = time/10000
     d.append(l)
     print("При i = ", i, "время = ", l)
