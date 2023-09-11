@@ -1,5 +1,6 @@
 import timeit
 import matplotlib.pyplot as plt
+import numpy as np
 
 
 def fibonacci(n):
@@ -35,6 +36,7 @@ for i in range(1, N):
     l = time/10000
     d.append(l)
     print("При i = ", i, "время = ", l)
+y_values = np.linspace(0, max(c+d), num=5)
 
 plt.plot(b, c)
 plt.plot(b, d)
@@ -42,5 +44,5 @@ plt.title("График")
 plt.xlabel("X-ось")
 plt.ylabel("Y-ось")
 plt.xticks(b)
-plt.yticks([0, 5e-6, 1e-5, 5e-5])
+plt.yticks(y_values)
 plt.show()
