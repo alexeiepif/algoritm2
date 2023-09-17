@@ -46,14 +46,14 @@ for i in range(startnum, endnum):
     b.append(i)
     time = sum(timeit.timeit(lambda: GCD(a, i), number=1)
                for j in range(500))
-    k = time/10000
+    k = time/500
     c.append(k)
     print("При i = ", i, "Число =", GCD(a, i), "время = ", k)
 print("GCDbest:")
 for i in range(startnum, endnum):
     time = sum(timeit.timeit(lambda: GCDbest(a, i), number=1)
                for j in range(500))
-    l = time/10000
+    l = time/500
     d.append(l)
     print("При i = ", i, "Число =", GCDbest(a, i), "время = ", l)
 
