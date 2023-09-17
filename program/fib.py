@@ -16,6 +16,7 @@ def fibonaccibest(n):
         a.append(a[i-1]+a[i-2])
     return a[n]
 
+
 def create_graph(b, c, d):
     y_values = np.linspace(0, max(c+d), num=5)
     plt.plot(b, c)
@@ -27,7 +28,8 @@ def create_graph(b, c, d):
     plt.yticks(y_values)
     plt.show()
 
-N = 10
+
+N = 15
 b = []
 c = []
 d = []
@@ -38,13 +40,13 @@ for i in range(1, N):
                for j in range(10000))
     k = time/10000
     c.append(k)
-    print("При i = ", i, "время = ", k)
+    print("При i = ", i, "Число =", fibonacci(i), "время = ", k)
 print("Fibonaccibest:")
 for i in range(1, N):
     time = sum(timeit.timeit(lambda: fibonaccibest(i), number=1)
                for j in range(10000))
     l = time/10000
     d.append(l)
-    print("При i = ", i, "время = ", l)
+    print("При i = ", i, "Число =", fibonaccibest(i), "время = ", l)
 
-create_graph(b,c,d)
+create_graph(b, c, d)
